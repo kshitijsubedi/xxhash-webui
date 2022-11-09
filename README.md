@@ -7,5 +7,3 @@ https://xxhash-webui.vercel.app
 - Uses 'xxhash-wasm' package.
 - Vite JS
 - Vue JS
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/vitejs-vite-dii6uf)
