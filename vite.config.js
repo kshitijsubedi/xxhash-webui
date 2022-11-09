@@ -10,4 +10,7 @@ export default defineConfig({
       supported: { bigint: true, 'top-level-await': true },
     },
   },
+  build: {
+    target: 'esnext',
+  },
 });
