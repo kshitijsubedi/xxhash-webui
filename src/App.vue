@@ -39,7 +39,7 @@ function pasteText() {
 
 function pasteHash() {
   navigator.clipboard.readText().then((value) => {
-    inputHash.value = Number(value);
+    inputHash.value = BigInt(value);
   });
 }
 </script>
@@ -60,7 +60,7 @@ function pasteHash() {
     "
   >
     <div class="avatar indicator">
-      <span class="indicator-item badge badge-primary">v1.1</span>
+      <span class="indicator-item badge badge-primary">BETA</span>
       <h1
         class="
           font-extrabold
@@ -94,7 +94,7 @@ function pasteHash() {
           class="stat-value hover:text-stone-200"
           @click="copyText(hash[64])"
         >
-          <span>{{ hash[64] }}</span>
+          <span>{{ BigInt(hash[64]) }}</span>
         </button>
         <div class="stat-desc">Click to copy hash.</div>
       </div>
