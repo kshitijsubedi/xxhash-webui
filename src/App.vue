@@ -74,7 +74,7 @@ function pasteHash() {
       </h1>
     </div>
     <div class="stats py-2">
-      <div class="stat text-center ">
+      <div class="stat text-center">
         <div class="stat-title text-xl">
           <div class="badge badge-outline">32-bit Hash</div>
         </div>
@@ -116,7 +116,7 @@ function pasteHash() {
         <span v-if="result" class="indicator-item badge badge-success"
           >Match</span
         >
-        <span v-else class="indicator-item badge badge-error">Incorrect</span>
+        <span v-else class="indicator-item badge badge-warning">Incorrect</span>
         <label class="input-group">
           <input class="input input-bordered" v-model="inputHash" />
           <button @click="pasteHash" class="btn btn-primary">paste</button>
