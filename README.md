@@ -1,12 +1,12 @@
-# A Web UI to generate xxHash from text input.
+# xxHash Generator
+
+# A Web App to generate xxHash from text input.
 
 xxHash is an extremely fast non-cryptographic hash algorithm, working at RAM speed limit. It is proposed in four flavors (XXH32, XXH64, XXH3_64bits and XXH3_128bits). The latest variant, XXH3, offers improved performance across the board, especially on small data.
 
-Website:  https://xxhash-webui.vercel.app/
+Website: https://xxhash-webui.vercel.app/
 
 ![image](https://user-images.githubusercontent.com/20613798/201505257-399e4d1b-1028-4adf-9a90-c607b47d6b52.png)
-
-
 
 - Uses 'xxhash-wasm' package.
 - Vite JS
