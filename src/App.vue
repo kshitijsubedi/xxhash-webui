@@ -65,7 +65,14 @@ function pasteHash() {
         href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         target="_blank"
         rel="noopener noreferrer"
-        class="indicator-item animate-pulse badge badge-info"
+        class="
+          indicator-item
+          badge
+          bg-blue-500
+          animate-pulse
+          shadow-xl shadow-blue-500
+          border-transparent
+        "
         >BETA</a
       >
       <h1
@@ -75,7 +82,7 @@ function pasteHash() {
           lg:text-8xl
           bg-clip-text bg-gradient-to-r
           from-purple-400
-          to-pink-600
+          to-pink-500
         "
       >
         XXHASH
@@ -137,13 +144,18 @@ function pasteHash() {
           v-model="inputHash"
           placeholder="0"
         />
-        <button class="btn btn-xs btn-accent" @click="pasteHash">Paste</button>
+        <button
+          class="btn btn-xs btn-accent text-accent-content"
+          @click="pasteHash"
+        >
+          Paste
+        </button>
       </div>
     </div>
   </div>
 
   <!-- Footer starts here -->
-  <footer class="footer ft footer-center p-4 bg-base-300 gap-0">
+  <footer class="footer ft footer-center p-2 bg-base-300 gap-0">
     <span
       class="
         text-sm text-gray-500
