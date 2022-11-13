@@ -10,4 +10,4 @@ Website: https://xxhash-webui.vercel.app/
 
 - Uses 'xxhash-wasm' package.
 - Vite JS
-- Vue JS
+- Svelte JS
