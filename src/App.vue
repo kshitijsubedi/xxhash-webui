@@ -87,7 +87,7 @@ function pasteHash() {
           <div class="badge badge-outline">32-bit Hash</div>
         </div>
         <button
-          class="stat-value hover:text-info-content text-3xl lg:text-4xl"
+          class="stat-value hover:text-info-content text-2xl lg:text-4xl"
           @click="copyText(hash[32])"
         >
           <span>{{ hash[32] }}</span>
@@ -99,7 +99,7 @@ function pasteHash() {
           <div class="badge badge-outline">64-bit Hash</div>
         </div>
         <button
-          class="stat-value hover:text-info-content text-3xl lg:text-4xl"
+          class="stat-value hover:text-info-content text-2xl lg:text-4xl"
           @click="copyText(hash[64])"
         >
           <span>{{ BigInt(hash[64]) }}</span>
@@ -131,7 +131,7 @@ function pasteHash() {
       "
     >
       <div class="card-body items-center text-center">
-        <h5 class="card-title">Enter Hash!</h5>
+        <h2 class="card-title">Enter Hash!</h2>
         <input
           class="input input-bordered text-neutral-content"
           v-model="inputHash"
