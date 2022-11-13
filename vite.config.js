@@ -1,16 +1,24 @@
-import { defineConfig } from 'vite';
-import { svelte } from '@sveltejs/vite-plugin-svelte';
+import { defineConfig } from "vite";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [svelte()],
   optimizeDeps: {
     esbuildOptions: {
-      target: 'es2021',
+      target: "es2021",
       supported: { bigint: true },
     },
   },
   build: {
-    target: 'esnext',
+    target: "esnext",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Reduce bundle size by splitting chunks
+          xxhash: ["xxhash-wasm"],
+        },
+      },
+    },
   },
 });
