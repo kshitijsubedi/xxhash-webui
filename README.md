@@ -4,7 +4,8 @@ xxHash is an extremely fast non-cryptographic hash algorithm, working at RAM spe
 
 Website:  https://xxhash-webui.vercel.app/
 
-![image](https://user-images.githubusercontent.com/20613798/200842645-922cf93a-f06c-459f-9eb7-0ba4d487066c.png)
+![image](https://user-images.githubusercontent.com/20613798/201505257-399e4d1b-1028-4adf-9a90-c607b47d6b52.png)
+
 
 
 - Uses 'xxhash-wasm' package.
