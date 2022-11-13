@@ -4,6 +4,7 @@ import xxhash from 'xxhash-wasm';
 
 let hasher;
 const EMPTYHASH = [46947589, 17241709254077376921];
+const SURPRISE = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
 
 const message = ref('');
 const inputHash = ref();
@@ -62,7 +63,7 @@ function pasteHash() {
   >
     <div class="avatar indicator">
       <a
-        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        :href="SURPRISE"
         target="_blank"
         rel="noopener noreferrer"
         class="
