@@ -6,7 +6,7 @@ xxHash is an extremely fast non-cryptographic hash algorithm, working at RAM spe
 
 Website: https://xxhash-webui.vercel.app/
 
-![image](https://user-images.githubusercontent.com/20613798/201505257-399e4d1b-1028-4adf-9a90-c607b47d6b52.png)
+![image](https://user-images.githubusercontent.com/20613798/201513433-b2be5eef-2d20-434c-8c12-ad5f0c7d9952.png)
 
 - Uses 'xxhash-wasm' package.
 - Vite JS
