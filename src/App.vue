@@ -6,7 +6,7 @@ let hasher;
 const EMPTYHASH = [46947589, 17241709254077376921];
 
 const message = ref('');
-const inputHash = ref(0);
+const inputHash = ref();
 const result = ref(false);
 const hash = ref({ 32: EMPTYHASH[0], 64: EMPTYHASH[1] });
 
@@ -47,24 +47,32 @@ function pasteHash() {
 <template>
   <div
     class="
+      content
       container
       flex flex-col
       items-center
       justify-self-center
       place-content-center
       mx-auto
-      w-1/2
+      lg:w-1/2
+      2xl:w-1/3
       b-0
-      p-8
-      m-10
+      p-4
     "
   >
     <div class="avatar indicator">
-      <span class="indicator-item badge badge-primary">BETA</span>
+      <a
+        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="indicator-item animate-pulse badge badge-info"
+        >BETA</a
+      >
       <h1
         class="
           font-extrabold
-          text-transparent text-8xl
+          text-transparent text-6xl
+          lg:text-8xl
           bg-clip-text bg-gradient-to-r
           from-purple-400
           to-pink-600
@@ -73,13 +81,13 @@ function pasteHash() {
         XXHASH
       </h1>
     </div>
-    <div class="stats py-2">
+    <div class="stats py-2 stats-vertical lg:stats-horizontal">
       <div class="stat text-center">
         <div class="stat-title text-xl">
           <div class="badge badge-outline">32-bit Hash</div>
         </div>
         <button
-          class="stat-value hover:text-info-content"
+          class="stat-value hover:text-info-content text-3xl lg:text-4xl"
           @click="copyText(hash[32])"
         >
           <span>{{ hash[32] }}</span>
@@ -91,7 +99,7 @@ function pasteHash() {
           <div class="badge badge-outline">64-bit Hash</div>
         </div>
         <button
-          class="stat-value hover:text-info-content"
+          class="stat-value hover:text-info-content text-3xl lg:text-4xl"
           @click="copyText(hash[64])"
         >
           <span>{{ BigInt(hash[64]) }}</span>
@@ -99,40 +107,84 @@ function pasteHash() {
         <div class="stat-desc">Click to copy hash.</div>
       </div>
     </div>
-    <div class="input-area text-center">
-      <textarea
-        class="textarea textarea-bordered w-full h-60"
-        v-model="message"
-        placeholder="Add text here."
-      ></textarea>
-      <button class="btn glass btn-wide my-5" @click="pasteText">Paste</button>
+    <div class="form-control w-full">
+      <div class="text-center input-group input-group-vertical">
+        <textarea
+          class="textarea textarea-bordered h-48"
+          v-model="message"
+          placeholder="Add text here."
+        ></textarea>
+        <button class="btn glass" @click="pasteText">
+          Paste from clipboard
+        </button>
+      </div>
     </div>
-    <div class="divider">Comparison</div>
-    <div class="form-control">
-      <label class="label">
-        <span class="label-text">Enter Hash</span>
-      </label>
-      <div class="indicator">
-        <span v-if="result" class="indicator-item badge badge-success"
-          >Match</span
-        >
-        <span v-else class="indicator-item badge badge-warning">Incorrect</span>
-        <label class="input-group">
-          <input class="input input-bordered" v-model="inputHash" />
-          <button @click="pasteHash" class="btn btn-primary">paste</button>
-        </label>
+
+    <!-- Comparision yeha bata suru -->
+    <div class="divider">🡣 Comparison 🡣</div>
+    <div
+      class="card"
+      :class="
+        result
+          ? 'bg-success text-success-content'
+          : 'bg-neutral text-neutral-content'
+      "
+    >
+      <div class="card-body items-center text-center">
+        <h5 class="card-title">Enter Hash!</h5>
+        <input
+          class="input input-bordered text-neutral-content"
+          v-model="inputHash"
+          placeholder="0"
+        />
+        <button class="btn btn-xs btn-accent" @click="pasteHash">Paste</button>
       </div>
     </div>
   </div>
-  <footer class="footer footer-center p-4 bg-base-300 gap-0 absolute bottom-0">
-    <p>xxHash WebUI by Kshitij Subedi 2022.</p>
-    <div class="flex">
-      <a class="link link-info" href="https://github.com/Cyan4973/xxHash"
-        >xxHash</a
+
+  <!-- Footer starts here -->
+  <footer class="footer ft footer-center p-4 bg-base-300 gap-0">
+    <span
+      class="
+        text-sm text-gray-500
+        sm:text-center
+        dark:text-gray-400
+        inline-flex
+      "
+      >xxHash Generator by
+      <a
+        href="https://github.com/kshitijsubedi"
+        class="link font-bold decoration-dashed decoration-sky-500"
+        >Kshitij Subedi</a
       >
-      <a class="link link-accent" href="https://github.com/jungomi/xxhash-wasm"
-        >xxhash-wasm</a
-      >
-    </div>
+      2022 🇳🇵
+    </span>
+    <ul
+      class="
+        flex flex-wrap
+        items-center
+        mt-3
+        text-sm text-gray-500
+        dark:text-gray-400
+        sm:mt-0
+      "
+    >
+      <li>
+        <a
+          href="https://github.com/Cyan4973/xxHash"
+          class="mr-4 link hover:underline md:mr-6 decoration-lime-700"
+        >
+          Cyan4973/xxHash</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/jungomi/xxhash-wasm"
+          class="mr-4 link hover:underline md:mr-6 decoration-lime-700"
+        >
+          xxhash-wasm</a
+        >
+      </li>
+    </ul>
   </footer>
 </template>
