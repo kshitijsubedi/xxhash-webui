@@ -74,12 +74,12 @@ function pasteHash() {
       </h1>
     </div>
     <div class="stats py-2">
-      <div class="stat text-center">
+      <div class="stat text-center ">
         <div class="stat-title text-xl">
           <div class="badge badge-outline">32-bit Hash</div>
         </div>
         <button
-          class="stat-value hover:text-stone-200"
+          class="stat-value hover:text-info-content"
           @click="copyText(hash[32])"
         >
           <span>{{ hash[32] }}</span>
@@ -91,7 +91,7 @@ function pasteHash() {
           <div class="badge badge-outline">64-bit Hash</div>
         </div>
         <button
-          class="stat-value hover:text-stone-200"
+          class="stat-value hover:text-info-content"
           @click="copyText(hash[64])"
         >
           <span>{{ BigInt(hash[64]) }}</span>
@@ -113,13 +113,13 @@ function pasteHash() {
         <span class="label-text">Enter Hash</span>
       </label>
       <div class="indicator">
-        <span v-if="result" class="indicator-item badge badge-accent"
+        <span v-if="result" class="indicator-item badge badge-success"
           >Match</span
         >
         <span v-else class="indicator-item badge badge-error">Incorrect</span>
         <label class="input-group">
           <input class="input input-bordered" v-model="inputHash" />
-          <button @click="pasteHash" class="btn btn-">paste</button>
+          <button @click="pasteHash" class="btn btn-primary">paste</button>
         </label>
       </div>
     </div>
